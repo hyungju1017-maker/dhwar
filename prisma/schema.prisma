@@ -1,0 +1,318 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ==================== AUTH ====================
+
+model User {
+  id            String    @id @default(cuid())
+  username      String    @unique
+  nickname      String    @unique
+  email         String    @unique
+  password      String
+  emailVerified DateTime?
+  universityId  String
+  university    University @relation(fields: [universityId], references: [id])
+
+  isFixedNick   Boolean   @default(true)
+  totalUpvotes  Int       @default(0)
+  totalDownvotes Int      @default(0)
+  points        Int       @default(0)
+
+  isAdmin       Boolean   @default(false)
+  isBanned      Boolean   @default(false)
+  banReason     String?
+  banExpires    DateTime?
+
+  posts         Post[]
+  comments      Comment[]
+  postVotes     PostVote[]
+  commentVotes  CommentVote[]
+  galleryManagers GalleryManager[]
+  bookmarks     Bookmark[]
+  reports       Report[]
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  lastLoginAt   DateTime?
+
+  @@index([universityId])
+  @@index([points(sort: Desc)])
+  @@map("dhwar_user")
+}
+
+model EmailVerificationToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  email     String
+  expires   DateTime
+  createdAt DateTime @default(now())
+
+  @@map("dhwar_email_verification_token")
+}
+
+// ==================== UNIVERSITY ====================
+
+model University {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  shortName     String?
+  domain        String   @unique
+  logoUrl       String?
+  region        String?
+
+  totalPoints   Int      @default(0)
+  memberCount   Int      @default(0)
+  avgPoints     Float    @default(0)
+  rank          Int?
+
+  users         User[]
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([domain])
+  @@index([rank])
+  @@index([totalPoints(sort: Desc)])
+  @@map("dhwar_university")
+}
+
+// ==================== GALLERY ====================
+
+model GalleryCategory {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  slug      String    @unique
+  order     Int       @default(0)
+  galleries Gallery[]
+
+  @@map("dhwar_gallery_category")
+}
+
+model Gallery {
+  id             String        @id @default(cuid())
+  name           String
+  slug           String        @unique
+  description    String?
+  type           GalleryType   @default(MAJOR)
+  categoryId     String?
+  category       GalleryCategory? @relation(fields: [categoryId], references: [id])
+
+  postCount      Int           @default(0)
+  todayPostCount Int           @default(0)
+
+  isAdult        Boolean       @default(false)
+  allowAnonymous Boolean       @default(true)
+  isActive       Boolean       @default(true)
+  headerImageUrl String?
+
+  posts          Post[]
+  managers       GalleryManager[]
+
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([categoryId])
+  @@index([type])
+  @@index([slug])
+  @@map("dhwar_gallery")
+}
+
+enum GalleryType {
+  MAJOR
+  MINOR
+  MINI
+}
+
+model GalleryManager {
+  id        String      @id @default(cuid())
+  userId    String
+  galleryId String
+  role      GalleryRole @default(SUB_MANAGER)
+  user      User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  gallery   Gallery     @relation(fields: [galleryId], references: [id], onDelete: Cascade)
+  createdAt DateTime    @default(now())
+
+  @@unique([userId, galleryId])
+  @@map("dhwar_gallery_manager")
+}
+
+enum GalleryRole {
+  MANAGER
+  SUB_MANAGER
+}
+
+// ==================== POST ====================
+
+model Post {
+  id            String    @id @default(cuid())
+  number        Int
+  title         String
+  content       String
+  contentText   String?
+
+  authorId      String
+  author        User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  galleryId     String
+  gallery       Gallery   @relation(fields: [galleryId], references: [id], onDelete: Cascade)
+
+  postType      PostType  @default(NORMAL)
+  universityName String?
+
+  upvoteCount   Int       @default(0)
+  downvoteCount Int       @default(0)
+  viewCount     Int       @default(0)
+  commentCount  Int       @default(0)
+
+  isNotice      Boolean   @default(false)
+  isPinned      Boolean   @default(false)
+  isDeleted     Boolean   @default(false)
+
+  comments      Comment[]
+  votes         PostVote[]
+  images        PostImage[]
+  bookmarks     Bookmark[]
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@unique([galleryId, number])
+  @@index([galleryId, createdAt(sort: Desc)])
+  @@index([galleryId, upvoteCount(sort: Desc)])
+  @@index([authorId])
+  @@map("dhwar_post")
+}
+
+enum PostType {
+  NORMAL
+  CONCEPT
+  NOTICE
+  RECOMMEND
+}
+
+model PostImage {
+  id        String   @id @default(cuid())
+  url       String
+  order     Int      @default(0)
+  postId    String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([postId])
+  @@map("dhwar_post_image")
+}
+
+// ==================== COMMENT ====================
+
+model Comment {
+  id             String    @id @default(cuid())
+  content        String
+
+  authorId       String
+  author         User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  postId         String
+  post           Post      @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  parentId       String?
+  parent         Comment?  @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies        Comment[] @relation("CommentReplies")
+
+  universityName String?
+
+  upvoteCount    Int       @default(0)
+  downvoteCount  Int       @default(0)
+
+  isDeleted      Boolean   @default(false)
+
+  votes          CommentVote[]
+
+  createdAt      DateTime  @default(now())
+
+  @@index([postId, createdAt])
+  @@index([authorId])
+  @@index([parentId])
+  @@map("dhwar_comment")
+}
+
+// ==================== VOTES ====================
+
+model PostVote {
+  id        String   @id @default(cuid())
+  value     Int
+  userId    String
+  postId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, postId])
+  @@map("dhwar_post_vote")
+}
+
+model CommentVote {
+  id        String   @id @default(cuid())
+  value     Int
+  userId    String
+  commentId String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  comment   Comment  @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, commentId])
+  @@map("dhwar_comment_vote")
+}
+
+// ==================== MISC ====================
+
+model Bookmark {
+  id        String   @id @default(cuid())
+  userId    String
+  postId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, postId])
+  @@map("dhwar_bookmark")
+}
+
+model Report {
+  id         String           @id @default(cuid())
+  reporterId String
+  reporter   User             @relation(fields: [reporterId], references: [id], onDelete: Cascade)
+  targetType ReportTargetType
+  targetId   String
+  reason     ReportReason
+  detail     String?
+  status     ReportStatus     @default(PENDING)
+  createdAt  DateTime         @default(now())
+
+  @@unique([reporterId, targetType, targetId])
+  @@index([status])
+  @@map("dhwar_report")
+}
+
+enum ReportTargetType {
+  POST
+  COMMENT
+  USER
+}
+
+enum ReportReason {
+  SPAM
+  HARASSMENT
+  INAPPROPRIATE
+  COPYRIGHT
+  OTHER
+}
+
+enum ReportStatus {
+  PENDING
+  RESOLVED
+  DISMISSED
+}
