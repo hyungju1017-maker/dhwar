@@ -3,8 +3,8 @@
 :root {
   --background: #f6f6f6;
   --foreground: #333333;
-  --primary: #3b4890;
-  --primary-dark: #2d3a73;
+  --primary: #8b0000;
+  --primary-dark: #6b0000;
   --border-color: #dcdcdc;
   --table-header: #ececec;
   --concept-bg: #fff9e6;
@@ -15,8 +15,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
+  --color-primary: #8b0000;
+  --color-primary-dark: #6b0000;
   --font-sans: "Noto Sans KR", sans-serif;
 }
 
@@ -30,7 +30,7 @@ body {
 
 /* Header */
 .dc-header {
-  background-color: var(--primary);
+  background-color: #8b0000 !important;
   color: #ffffff;
 }
 
@@ -42,7 +42,7 @@ body {
 .dc-table {
   width: 100%;
   border-collapse: collapse;
-  border-top: 2px solid var(--primary);
+  border-top: 2px solid #8b0000;
 }
 
 .dc-table th {
@@ -99,7 +99,7 @@ body {
   border-radius: 2px;
   font-size: 11px;
   font-weight: 600;
-  background-color: var(--primary);
+  background-color: #8b0000;
   color: #fff;
   margin-right: 4px;
 }
@@ -121,8 +121,8 @@ body {
   border-radius: 2px;
   font-size: 10px;
   font-weight: 500;
-  background-color: #e8f0fe;
-  color: var(--primary);
+  background-color: #fde8e8;
+  color: #8b0000;
   margin-left: 4px;
 }
 
@@ -150,13 +150,13 @@ body {
 }
 
 .vote-btn-up {
-  color: var(--primary);
+  color: #8b0000;
 }
 
 .vote-btn-up:hover {
-  background-color: var(--primary);
+  background-color: #8b0000;
   color: #fff;
-  border-color: var(--primary);
+  border-color: #8b0000;
 }
 
 .vote-btn-down {
@@ -177,7 +177,7 @@ body {
 }
 
 .dc-sidebar-header {
-  background-color: var(--primary);
+  background-color: #8b0000 !important;
   color: #fff;
   padding: 8px 12px;
   font-size: 13px;
@@ -201,13 +201,13 @@ body {
 }
 
 .dc-sidebar-item a:hover {
-  color: var(--primary);
+  color: #8b0000;
 }
 
 /* Tabs */
 .dc-tabs {
   display: flex;
-  border-bottom: 2px solid var(--primary);
+  border-bottom: 2px solid #8b0000;
 }
 
 .dc-tab {
@@ -223,11 +223,11 @@ body {
 }
 
 .dc-tab:hover {
-  color: var(--primary);
+  color: #8b0000;
 }
 
 .dc-tab-active {
-  color: var(--primary);
+  color: #8b0000;
   font-weight: 700;
   background: #fff;
   border-color: var(--border-color);
@@ -257,9 +257,9 @@ body {
 }
 
 .dc-pagination .active {
-  background-color: var(--primary);
+  background-color: #8b0000;
   color: #fff;
-  border-color: var(--primary);
+  border-color: #8b0000;
   font-weight: 700;
 }
 
@@ -292,13 +292,13 @@ body {
 }
 
 .dc-btn-primary {
-  background-color: var(--primary);
+  background-color: #8b0000;
   color: #fff;
-  border: 1px solid var(--primary);
+  border: 1px solid #8b0000;
 }
 
 .dc-btn-primary:hover {
-  background-color: var(--primary-dark);
+  background-color: #6b0000;
 }
 
 .dc-btn-secondary {
@@ -324,7 +324,7 @@ body {
 }
 
 .dc-input:focus {
-  border-color: var(--primary);
+  border-color: #8b0000;
 }
 
 .dc-textarea {
@@ -341,7 +341,7 @@ body {
 }
 
 .dc-textarea:focus {
-  border-color: var(--primary);
+  border-color: #8b0000;
 }
 
 /* Card wrapper */
@@ -355,7 +355,7 @@ body {
 .dc-ranking-table {
   width: 100%;
   border-collapse: collapse;
-  border-top: 2px solid var(--primary);
+  border-top: 2px solid #8b0000;
 }
 
 .dc-ranking-table th {
@@ -384,7 +384,7 @@ body {
 }
 
 .dc-ranking-table .rank-2 {
-  color: var(--primary);
+  color: #8b0000;
   font-weight: 700;
 }
 

@@ -27,7 +27,7 @@ export async function GET(
 
     if (!gallery || !gallery.isActive) {
       return NextResponse.json(
-        { error: "갤러리를 찾을 수 없습니다." },
+        { error: "게시판를 찾을 수 없습니다." },
         { status: 404 }
       );
     }
@@ -108,7 +108,7 @@ export async function POST(
 
     if (!gallery || !gallery.isActive) {
       return NextResponse.json(
-        { error: "갤러리를 찾을 수 없습니다." },
+        { error: "게시판를 찾을 수 없습니다." },
         { status: 404 }
       );
     }

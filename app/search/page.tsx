@@ -90,7 +90,7 @@ function SearchContent() {
 
   return (
     <div>
-      <h1 className="text-[16px] font-bold text-[var(--primary)] mb-4">검색</h1>
+      <h1 className="text-[16px] font-bold text-[#8b0000] mb-4">검색</h1>
 
       {/* Search form */}
       <div className="dc-card p-4 mb-4">
@@ -104,7 +104,7 @@ function SearchContent() {
                   value="title"
                   checked={searchType === "title"}
                   onChange={() => setSearchType("title")}
-                  className="accent-[var(--primary)]"
+                  className="accent-[#8b0000]"
                 />
                 제목
               </label>
@@ -115,7 +115,7 @@ function SearchContent() {
                   value="content"
                   checked={searchType === "content"}
                   onChange={() => setSearchType("content")}
-                  className="accent-[var(--primary)]"
+                  className="accent-[#8b0000]"
                 />
                 내용
               </label>
@@ -126,7 +126,7 @@ function SearchContent() {
                   value="both"
                   checked={searchType === "both"}
                   onChange={() => setSearchType("both")}
-                  className="accent-[var(--primary)]"
+                  className="accent-[#8b0000]"
                 />
                 제목+내용
               </label>
@@ -137,7 +137,7 @@ function SearchContent() {
                   value="author"
                   checked={searchType === "author"}
                   onChange={() => setSearchType("author")}
-                  className="accent-[var(--primary)]"
+                  className="accent-[#8b0000]"
                 />
                 글쓴이
               </label>
@@ -173,7 +173,7 @@ function SearchContent() {
             <table className="dc-table">
               <thead>
                 <tr>
-                  <th className="w-[80px]">갤러리</th>
+                  <th className="w-[80px]">게시판</th>
                   <th>제목</th>
                   <th className="w-[80px]">글쓴이</th>
                   <th className="w-[50px]">추천</th>
@@ -187,7 +187,7 @@ function SearchContent() {
                     <td className="text-center text-[11px] text-[#999]">
                       <Link
                         href={`/gallery/${post.gallery.slug}`}
-                        className="hover:text-[var(--primary)]"
+                        className="hover:text-[#8b0000]"
                       >
                         {post.gallery.name}
                       </Link>
@@ -196,7 +196,7 @@ function SearchContent() {
                       <Link href={`/gallery/${post.gallery.slug}/${post.id}`}>
                         {post.title}
                         {post.commentCount > 0 && (
-                          <span className="ml-1 text-[var(--primary)] text-[11px] font-bold">
+                          <span className="ml-1 text-[#8b0000] text-[11px] font-bold">
                             [{post.commentCount}]
                           </span>
                         )}
@@ -205,7 +205,7 @@ function SearchContent() {
                     <td className="text-center text-[12px] text-[#666]">
                       {post.author.nickname}
                     </td>
-                    <td className="text-center text-[12px] font-bold text-[var(--primary)]">
+                    <td className="text-center text-[12px] font-bold text-[#8b0000]">
                       {post.upvoteCount}
                     </td>
                     <td className="text-center text-[12px] text-[#999]">

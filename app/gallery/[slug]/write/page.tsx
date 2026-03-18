@@ -80,7 +80,7 @@ export default function WritePostPage() {
         <h1 className="text-[16px] font-bold">글쓰기</h1>
         <Link
           href={`/gallery/${slug}`}
-          className="text-[12px] text-[#999] hover:text-[var(--primary)]"
+          className="text-[12px] text-[#999] hover:text-[#8b0000]"
         >
           &larr; 목록으로
         </Link>

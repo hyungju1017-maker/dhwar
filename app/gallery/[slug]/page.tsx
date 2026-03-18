@@ -102,7 +102,7 @@ export default async function GalleryPage({
         <div className="dc-card p-4 mb-3">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-[16px] font-bold text-[var(--primary)]">
+              <h1 className="text-[16px] font-bold text-[#8b0000]">
                 {gallery.name}
               </h1>
               {gallery.description && (
@@ -160,7 +160,7 @@ export default async function GalleryPage({
                   <Link href={`/gallery/${slug}/${post.id}`}>
                     {post.title}
                     {post.commentCount > 0 && (
-                      <span className="ml-1 text-[var(--primary)] text-[11px] font-bold">
+                      <span className="ml-1 text-[#8b0000] text-[11px] font-bold">
                         [{post.commentCount}]
                       </span>
                     )}
@@ -206,7 +206,7 @@ export default async function GalleryPage({
                   <Link href={`/gallery/${slug}/${post.id}`}>
                     {post.title}
                     {post.commentCount > 0 && (
-                      <span className="ml-1 text-[var(--primary)] text-[11px] font-bold">
+                      <span className="ml-1 text-[#8b0000] text-[11px] font-bold">
                         [{post.commentCount}]
                       </span>
                     )}
@@ -287,10 +287,10 @@ export default async function GalleryPage({
       {/* Right sidebar */}
       <div className="hidden lg:block w-[220px] shrink-0 space-y-4">
         <div className="dc-sidebar">
-          <div className="dc-sidebar-header">갤러리 인기글</div>
+          <div className="dc-sidebar-header">게시판 인기글</div>
           {hotPosts.map((post, i) => (
             <div key={post.id} className="dc-sidebar-item flex items-start gap-2">
-              <span className="text-[11px] font-bold text-[var(--primary)] w-[14px] shrink-0">
+              <span className="text-[11px] font-bold text-[#8b0000] w-[14px] shrink-0">
                 {i + 1}
               </span>
               <Link

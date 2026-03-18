@@ -85,11 +85,11 @@ export default async function PostDetailPage({
     <div className="max-w-[800px] mx-auto">
       {/* Breadcrumb */}
       <div className="text-[12px] text-[#999] mb-3">
-        <Link href="/" className="hover:text-[var(--primary)]">
+        <Link href="/" className="hover:text-[#8b0000]">
           홈
         </Link>
         <span className="mx-1">&gt;</span>
-        <Link href={`/gallery/${slug}`} className="hover:text-[var(--primary)]">
+        <Link href={`/gallery/${slug}`} className="hover:text-[#8b0000]">
           {gallery.name}
         </Link>
         <span className="mx-1">&gt;</span>
@@ -162,7 +162,7 @@ export default async function PostDetailPage({
       <div className="mt-4">
         <div className="text-[14px] font-bold mb-2">
           댓글{" "}
-          <span className="text-[var(--primary)]">{post.commentCount}</span>
+          <span className="text-[#8b0000]">{post.commentCount}</span>
         </div>
         <CommentSection
           postId={post.id}

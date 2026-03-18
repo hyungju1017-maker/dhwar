@@ -40,7 +40,7 @@ export default function Sidebar() {
     <aside className="flex w-full flex-col gap-4 lg:w-[280px]">
       {/* Real-time best */}
       <div className="rounded border border-gray-300 bg-white">
-        <div className="border-b border-gray-300 bg-[#3b4890] px-3 py-2">
+        <div className="border-b border-gray-300 bg-[#8b0000] px-3 py-2">
           <h3 className="text-sm font-bold text-white">실시간 베스트</h3>
         </div>
         <ul className="divide-y divide-gray-100">
@@ -55,7 +55,7 @@ export default function Sidebar() {
                 href={`/gallery/${post.gallerySlug}/${post.id}`}
                 className="flex items-start gap-2 px-3 py-1.5 text-xs hover:bg-gray-50"
               >
-                <span className="mt-px shrink-0 font-bold text-[#3b4890]">
+                <span className="mt-px shrink-0 font-bold text-[#8b0000]">
                   {idx + 1}
                 </span>
                 <span className="line-clamp-1 flex-1 text-gray-800">
@@ -78,7 +78,7 @@ export default function Sidebar() {
 
       {/* University ranking */}
       <div className="rounded border border-gray-300 bg-white">
-        <div className="border-b border-gray-300 bg-[#3b4890] px-3 py-2">
+        <div className="border-b border-gray-300 bg-[#8b0000] px-3 py-2">
           <h3 className="text-sm font-bold text-white">대학 랭킹</h3>
         </div>
         <ul className="divide-y divide-gray-100">

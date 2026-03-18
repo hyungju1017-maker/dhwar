@@ -10,13 +10,13 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="w-full bg-[#3b4890] text-white shadow-md">
+    <header className="w-full bg-[#8b0000] text-white shadow-md">
       {/* Top bar */}
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-4 py-2">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-extrabold tracking-tight">
-            DHWAR
+          <span className="text-[80px] leading-none drop-shadow-sm" style={{ fontFamily: "var(--font-brush), cursive", letterSpacing: "0.05em" }}>
+            大學大戰
           </span>
         </Link>
 
@@ -26,7 +26,7 @@ export default function Header() {
             href="/gallery"
             className="text-sm font-medium text-gray-200 transition-colors hover:text-white"
           >
-            갤러리
+            게시판
           </Link>
           <Link
             href="/hit"
@@ -76,7 +76,7 @@ export default function Header() {
               </Link>
               <Link
                 href="/auth/signup"
-                className="rounded bg-white px-3 py-1 text-xs font-semibold text-[#3b4890] transition-colors hover:bg-gray-100"
+                className="rounded bg-white px-3 py-1 text-xs font-semibold text-[#8b0000] transition-colors hover:bg-gray-100"
               >
                 회원가입
               </Link>
@@ -104,14 +104,14 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="border-t border-white/20 bg-[#2f3c78] px-4 py-3 md:hidden">
+        <div className="border-t border-white/20 bg-[#6b0000] px-4 py-3 md:hidden">
           <nav className="flex flex-col gap-3">
             <Link
               href="/gallery"
               className="text-sm text-gray-200 hover:text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
-              갤러리
+              게시판
             </Link>
             <Link
               href="/hit"
@@ -159,7 +159,7 @@ export default function Header() {
                 </Link>
                 <Link
                   href="/auth/signup"
-                  className="flex-1 rounded bg-white py-1.5 text-center text-xs font-semibold text-[#3b4890] hover:bg-gray-100"
+                  className="flex-1 rounded bg-white py-1.5 text-center text-xs font-semibold text-[#8b0000] hover:bg-gray-100"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   회원가입

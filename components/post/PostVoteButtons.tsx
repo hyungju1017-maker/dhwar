@@ -56,8 +56,8 @@ export default function PostVoteButtons({
         disabled={voting || voted !== null}
         className={`flex flex-col items-center gap-1 rounded-lg border-2 px-8 py-4 transition-colors ${
           voted === "up"
-            ? "border-[#3b4890] bg-[#3b4890] text-white"
-            : "border-[#3b4890] bg-white text-[#3b4890] hover:bg-[#eef0f6]"
+            ? "border-[#8b0000] bg-[#8b0000] text-white"
+            : "border-[#8b0000] bg-white text-[#8b0000] hover:bg-[#fde8e8]"
         } ${voted !== null && voted !== "up" ? "cursor-not-allowed opacity-50" : ""}`}
       >
         <svg

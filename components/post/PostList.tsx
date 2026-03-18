@@ -41,7 +41,7 @@ export default function PostList({ posts, gallerySlug }: PostListProps) {
     <div className="w-full overflow-x-auto">
       <table className="w-full min-w-[640px] border-collapse text-xs">
         <thead>
-          <tr className="border-b-2 border-[#3b4890] bg-[#eef0f6] text-gray-600">
+          <tr className="border-b-2 border-[#8b0000] bg-[#fde8e8] text-gray-600">
             <th className="w-[60px] px-2 py-2 text-center font-medium">
               번호
             </th>
@@ -90,7 +90,7 @@ export default function PostList({ posts, gallerySlug }: PostListProps) {
                 >
                   {post.title}
                   {post.commentCount > 0 && (
-                    <span className="ml-1 font-bold text-[#3b4890]">
+                    <span className="ml-1 font-bold text-[#8b0000]">
                       [{post.commentCount}]
                     </span>
                   )}

@@ -24,7 +24,7 @@ export default function UniversityRankingTable({
     <div className="w-full overflow-x-auto">
       <table className="w-full min-w-[500px] border-collapse text-sm">
         <thead>
-          <tr className="border-b-2 border-[#3b4890] bg-[#eef0f6] text-gray-600">
+          <tr className="border-b-2 border-[#8b0000] bg-[#fde8e8] text-gray-600">
             <th className="w-[60px] px-3 py-2.5 text-center font-medium">
               순위
             </th>
@@ -64,7 +64,7 @@ export default function UniversityRankingTable({
               <td className="px-3 py-2 font-medium text-gray-900">
                 {uni.name}
               </td>
-              <td className="px-3 py-2 text-center text-[#3b4890]">
+              <td className="px-3 py-2 text-center text-[#8b0000]">
                 {uni.totalPoints.toLocaleString()}
               </td>
               <td className="px-3 py-2 text-center text-gray-600">

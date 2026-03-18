@@ -8,7 +8,7 @@ export default async function RankingPage() {
 
   return (
     <div>
-      <h1 className="text-[16px] font-bold text-[var(--primary)] mb-1">
+      <h1 className="text-[16px] font-bold text-[#8b0000] mb-1">
         대학 랭킹
       </h1>
       <p className="text-[12px] text-[#999] mb-4">

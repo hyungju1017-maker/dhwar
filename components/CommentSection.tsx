@@ -165,7 +165,7 @@ export function CommentSection({
                   onClick={() =>
                     setReplyTo(replyTo === comment.id ? null : comment.id)
                   }
-                  className="text-[11px] text-[#999] hover:text-[var(--primary)]"
+                  className="text-[11px] text-[#999] hover:text-[#8b0000]"
                 >
                   답글
                 </button>
@@ -275,7 +275,7 @@ export function CommentSection({
       ) : (
         <div className="p-3 border-t border-[var(--border-color)] text-center text-[12px] text-[#999]">
           댓글을 작성하려면{" "}
-          <a href="/auth/signin" className="text-[var(--primary)] hover:underline">
+          <a href="/auth/signin" className="text-[#8b0000] hover:underline">
             로그인
           </a>
           해주세요.

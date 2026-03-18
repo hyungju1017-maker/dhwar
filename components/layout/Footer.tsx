@@ -18,7 +18,7 @@ export default function Footer() {
           </Link>
         </div>
         <p className="text-center text-gray-400">
-          &copy; {new Date().getFullYear()} DHWAR. All rights reserved.
+          &copy; {new Date().getFullYear()} 大學大戰. All rights reserved.
         </p>
       </div>
     </footer>

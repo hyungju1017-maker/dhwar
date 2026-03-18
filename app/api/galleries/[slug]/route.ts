@@ -15,7 +15,7 @@ export async function GET(
 
     if (!gallery || !gallery.isActive) {
       return NextResponse.json(
-        { error: "갤러리를 찾을 수 없습니다." },
+        { error: "게시판를 찾을 수 없습니다." },
         { status: 404 }
       );
     }
@@ -24,7 +24,7 @@ export async function GET(
   } catch (error) {
     console.error("Gallery fetch error:", error);
     return NextResponse.json(
-      { error: "갤러리 정보를 불러오는 중 오류가 발생했습니다." },
+      { error: "게시판 정보를 불러오는 중 오류가 발생했습니다." },
       { status: 500 }
     );
   }

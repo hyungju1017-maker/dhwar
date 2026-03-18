@@ -57,7 +57,7 @@ function VerifyEmailContent() {
               <p className="text-[13px] text-[#666] mb-1">
                 {email ? (
                   <>
-                    <span className="font-medium text-[var(--primary)]">{email}</span>
+                    <span className="font-medium text-[#8b0000]">{email}</span>
                     로 인증 메일을 발송했습니다.
                   </>
                 ) : (
@@ -95,7 +95,7 @@ function VerifyEmailContent() {
                 {message}
               </h1>
               <p className="text-[13px] text-[#666] mb-4">
-                이제 로그인하여 DHWAR를 이용하실 수 있습니다.
+                이제 로그인하여 大學大戰을 이용하실 수 있습니다.
               </p>
               <Link
                 href="/auth/signin"

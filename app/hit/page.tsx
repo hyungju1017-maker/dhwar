@@ -43,7 +43,7 @@ export default async function HitPage({
 
   return (
     <div>
-      <h1 className="text-[16px] font-bold text-[var(--primary)] mb-3">
+      <h1 className="text-[16px] font-bold text-[#8b0000] mb-3">
         실시간 베스트
       </h1>
       <p className="text-[12px] text-[#999] mb-4">
@@ -54,7 +54,7 @@ export default async function HitPage({
         <thead>
           <tr>
             <th className="w-[50px]">순위</th>
-            <th className="w-[80px]">갤러리</th>
+            <th className="w-[80px]">게시판</th>
             <th>제목</th>
             <th className="w-[90px]">글쓴이</th>
             <th className="w-[50px]">추천</th>
@@ -72,7 +72,7 @@ export default async function HitPage({
                     rank === 1
                       ? "text-red-500"
                       : rank === 2
-                      ? "text-[var(--primary)]"
+                      ? "text-[#8b0000]"
                       : rank === 3
                       ? "text-green-600"
                       : "text-[#999]"
@@ -83,7 +83,7 @@ export default async function HitPage({
                 <td className="text-center text-[11px]">
                   <Link
                     href={`/gallery/${post.gallery.slug}`}
-                    className="text-[#666] hover:text-[var(--primary)]"
+                    className="text-[#666] hover:text-[#8b0000]"
                   >
                     {post.gallery.name}
                   </Link>
@@ -92,7 +92,7 @@ export default async function HitPage({
                   <Link href={`/gallery/${post.gallery.slug}/${post.id}`}>
                     {post.title}
                     {post.commentCount > 0 && (
-                      <span className="ml-1 text-[var(--primary)] text-[11px] font-bold">
+                      <span className="ml-1 text-[#8b0000] text-[11px] font-bold">
                         [{post.commentCount}]
                       </span>
                     )}
@@ -106,7 +106,7 @@ export default async function HitPage({
                     </span>
                   )}
                 </td>
-                <td className="text-center text-[13px] font-bold text-[var(--primary)]">
+                <td className="text-center text-[13px] font-bold text-[#8b0000]">
                   {post.upvoteCount}
                 </td>
                 <td className="text-center text-[12px] text-[#999]">

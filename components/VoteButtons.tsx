@@ -65,7 +65,7 @@ export function VoteButtons({
         onClick={() => handleVote(1)}
         disabled={loading || currentVote !== null}
         className={`vote-btn vote-btn-up ${
-          currentVote === 1 ? "bg-[var(--primary)] text-white border-[var(--primary)]" : ""
+          currentVote === 1 ? "bg-[#8b0000] text-white border-[#8b0000]" : ""
         } disabled:opacity-60 disabled:cursor-not-allowed`}
       >
         <span>&#9650;</span>

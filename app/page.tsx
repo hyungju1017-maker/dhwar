@@ -49,13 +49,13 @@ export default async function HomePage() {
         {/* Category tabs */}
         <div className="dc-tabs mb-0">
           <Link href="/gallery" className="dc-tab dc-tab-active">
-            주요 갤러리
+            주요 게시판
           </Link>
           <Link href="/gallery?type=MINOR" className="dc-tab">
-            마이너 갤러리
+            마이너 게시판
           </Link>
           <Link href="/gallery?type=MINI" className="dc-tab">
-            미니 갤러리
+            미니 게시판
           </Link>
         </div>
 
@@ -87,7 +87,7 @@ export default async function HomePage() {
 
           {galleries.length === 0 && (
             <div className="p-8 text-center text-sm text-[#999]">
-              등록된 갤러리가 없습니다.
+              등록된 게시판가 없습니다.
             </div>
           )}
         </div>
@@ -95,10 +95,10 @@ export default async function HomePage() {
         {/* Hot posts preview on main */}
         <div className="mt-4">
           <div className="flex items-center justify-between mb-2">
-            <h2 className="text-[15px] font-bold text-[var(--primary)]">
+            <h2 className="text-[15px] font-bold text-[#8b0000]">
               실시간 베스트
             </h2>
-            <Link href="/hit" className="text-xs text-[#999] hover:text-[var(--primary)]">
+            <Link href="/hit" className="text-xs text-[#999] hover:text-[#8b0000]">
               더보기 &gt;
             </Link>
           </div>
@@ -106,7 +106,7 @@ export default async function HomePage() {
             <table className="dc-table">
               <thead>
                 <tr>
-                  <th className="w-[60px]">갤러리</th>
+                  <th className="w-[60px]">게시판</th>
                   <th>제목</th>
                   <th className="w-[70px]">글쓴이</th>
                   <th className="w-[50px]">추천</th>
@@ -118,7 +118,7 @@ export default async function HomePage() {
                 {hotPosts.map((post) => (
                   <tr key={post.id}>
                     <td className="text-center text-[11px] text-[#999]">
-                      <Link href={`/gallery/${post.gallery.slug}`} className="hover:text-[var(--primary)]">
+                      <Link href={`/gallery/${post.gallery.slug}`} className="hover:text-[#8b0000]">
                         {post.gallery.name}
                       </Link>
                     </td>
@@ -126,7 +126,7 @@ export default async function HomePage() {
                       <Link href={`/gallery/${post.gallery.slug}/${post.id}`}>
                         {post.title}
                         {post.commentCount > 0 && (
-                          <span className="ml-1 text-[var(--primary)] text-[11px] font-bold">
+                          <span className="ml-1 text-[#8b0000] text-[11px] font-bold">
                             [{post.commentCount}]
                           </span>
                         )}
@@ -135,7 +135,7 @@ export default async function HomePage() {
                     <td className="text-center text-[12px] text-[#666]">
                       {post.author.nickname}
                     </td>
-                    <td className="text-center text-[12px] font-bold text-[var(--primary)]">
+                    <td className="text-center text-[12px] font-bold text-[#8b0000]">
                       {post.upvoteCount}
                     </td>
                     <td className="text-center text-[12px] text-[#999]">
@@ -166,7 +166,7 @@ export default async function HomePage() {
           <div className="dc-sidebar-header">실시간 베스트</div>
           {hotPosts.slice(0, 8).map((post, i) => (
             <div key={post.id} className="dc-sidebar-item flex items-start gap-2">
-              <span className="text-[11px] font-bold text-[var(--primary)] w-[16px] shrink-0">
+              <span className="text-[11px] font-bold text-[#8b0000] w-[16px] shrink-0">
                 {i + 1}
               </span>
               <Link
@@ -192,7 +192,7 @@ export default async function HomePage() {
                   i === 0
                     ? "text-red-500"
                     : i === 1
-                    ? "text-[var(--primary)]"
+                    ? "text-[#8b0000]"
                     : i === 2
                     ? "text-green-600"
                     : "text-[#999]"
@@ -212,7 +212,7 @@ export default async function HomePage() {
           <div className="p-2 text-center">
             <Link
               href="/ranking"
-              className="text-[11px] text-[var(--primary)] hover:underline"
+              className="text-[11px] text-[#8b0000] hover:underline"
             >
               전체 랭킹 보기 &gt;
             </Link>

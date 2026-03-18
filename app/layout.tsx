@@ -12,11 +12,12 @@ const notoSansKR = Noto_Sans_KR({
   display: "swap",
 });
 
+
 export const metadata: Metadata = {
-  title: "DHWAR - 대학생 커뮤니티",
+  title: "大學大戰 - 대학생 커뮤니티",
   description:
-    "대학생들을 위한 익명 커뮤니티. 대학교 인증 기반 갤러리, 실시간 베스트, 대학 랭킹을 제공합니다.",
-  keywords: ["대학생", "커뮤니티", "갤러리", "익명", "대학교"],
+    "대학생들을 위한 익명 커뮤니티. 대학교 인증 기반 게시판, 실시간 베스트, 대학 랭킹을 제공합니다.",
+  keywords: ["대학생", "커뮤니티", "게시판", "익명", "대학교"],
 };
 
 export default function RootLayout({
@@ -26,6 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className={`${notoSansKR.variable} font-sans antialiased`}>
         <Providers>
           <div className="flex min-h-screen flex-col">

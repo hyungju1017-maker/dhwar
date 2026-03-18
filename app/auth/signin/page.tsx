@@ -56,7 +56,7 @@ function SignInContent() {
     <div className="flex justify-center py-12">
       <div className="w-full max-w-[360px]">
         <div className="text-center mb-6">
-          <h1 className="text-xl font-bold text-[var(--primary)]">DHWAR</h1>
+          <h1 className="text-xl font-bold text-[#8b0000]">大學大戰</h1>
           <p className="text-sm text-[#999] mt-1">대학생 커뮤니티</p>
         </div>
 
@@ -110,7 +110,7 @@ function SignInContent() {
 
           <div className="mt-4 text-center text-[12px] text-[#999]">
             계정이 없으신가요?{" "}
-            <Link href="/auth/signup" className="text-[var(--primary)] hover:underline font-medium">
+            <Link href="/auth/signup" className="text-[#8b0000] hover:underline font-medium">
               회원가입
             </Link>
           </div>

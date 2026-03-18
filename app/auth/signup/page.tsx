@@ -94,7 +94,7 @@ export default function SignUpPage() {
     <div className="flex justify-center py-8">
       <div className="w-full max-w-[420px]">
         <div className="text-center mb-6">
-          <h1 className="text-xl font-bold text-[var(--primary)]">DHWAR</h1>
+          <h1 className="text-xl font-bold text-[#8b0000]">大學大戰</h1>
           <p className="text-sm text-[#999] mt-1">회원가입</p>
         </div>
 
@@ -153,7 +153,7 @@ export default function SignUpPage() {
               <button
                 type="button"
                 onClick={() => setShowDomains(!showDomains)}
-                className="text-[11px] text-[var(--primary)] mt-1 hover:underline"
+                className="text-[11px] text-[#8b0000] mt-1 hover:underline"
               >
                 {showDomains ? "지원 대학 접기 ▲" : "지원 대학 목록 보기 ▼"}
               </button>
@@ -212,7 +212,7 @@ export default function SignUpPage() {
 
           <div className="mt-4 text-center text-[12px] text-[#999]">
             이미 계정이 있으신가요?{" "}
-            <Link href="/auth/signin" className="text-[var(--primary)] hover:underline font-medium">
+            <Link href="/auth/signin" className="text-[#8b0000] hover:underline font-medium">
               로그인
             </Link>
           </div>

@@ -21,7 +21,7 @@ export default async function UserRankingPage() {
 
   return (
     <div>
-      <h1 className="text-[16px] font-bold text-[var(--primary)] mb-1">
+      <h1 className="text-[16px] font-bold text-[#8b0000] mb-1">
         유저 랭킹
       </h1>
       <p className="text-[12px] text-[#999] mb-4">
@@ -71,7 +71,7 @@ export default async function UserRankingPage() {
                     </span>
                   </td>
                   <td className="font-bold">{formatNumber(user.points)}</td>
-                  <td className="text-[var(--primary)]">
+                  <td className="text-[#8b0000]">
                     {formatNumber(user.totalUpvotes)}
                   </td>
                   <td className="text-[#999]">

@@ -64,7 +64,7 @@ export default function Pagination({
           href={buildUrl(page)}
           className={`${linkClass} ${
             page === currentPage
-              ? "border-[#3b4890] bg-[#3b4890] font-bold text-white"
+              ? "border-[#8b0000] bg-[#8b0000] font-bold text-white"
               : "border-gray-300 bg-white text-gray-600 hover:bg-gray-100"
           }`}
         >

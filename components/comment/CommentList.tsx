@@ -107,7 +107,7 @@ export default function CommentList({ postId }: CommentListProps) {
       <div className="mt-1 flex items-center gap-3 text-[10px] text-gray-400">
         <button
           onClick={() => handleVoteComment(comment.id, "up")}
-          className="hover:text-[#3b4890]"
+          className="hover:text-[#8b0000]"
         >
           추천 {comment.upvoteCount > 0 ? comment.upvoteCount : ""}
         </button>
@@ -122,7 +122,7 @@ export default function CommentList({ postId }: CommentListProps) {
             onClick={() =>
               setReplyingTo(replyingTo === comment.id ? null : comment.id)
             }
-            className="hover:text-[#3b4890]"
+            className="hover:text-[#8b0000]"
           >
             답글
           </button>
@@ -161,8 +161,8 @@ export default function CommentList({ postId }: CommentListProps) {
 
   return (
     <div className="mt-4">
-      <div className="mb-2 border-b-2 border-[#3b4890] pb-1">
-        <h3 className="text-sm font-bold text-[#3b4890]">
+      <div className="mb-2 border-b-2 border-[#8b0000] pb-1">
+        <h3 className="text-sm font-bold text-[#8b0000]">
           댓글{" "}
           <span className="text-gray-500">[{comments.length}]</span>
         </h3>

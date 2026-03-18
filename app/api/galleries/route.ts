@@ -49,7 +49,7 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error("Galleries fetch error:", error);
     return NextResponse.json(
-      { error: "갤러리 목록을 불러오는 중 오류가 발생했습니다." },
+      { error: "게시판 목록을 불러오는 중 오류가 발생했습니다." },
       { status: 500 }
     );
   }

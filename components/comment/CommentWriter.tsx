@@ -59,12 +59,12 @@ export default function CommentWriter({
         onChange={(e) => setContent(e.target.value)}
         placeholder={parentId ? "답글을 입력하세요." : "댓글을 입력하세요."}
         rows={compact ? 2 : 3}
-        className="flex-1 resize-none rounded border border-gray-300 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:border-[#3b4890] focus:outline-none"
+        className="flex-1 resize-none rounded border border-gray-300 px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:border-[#8b0000] focus:outline-none"
       />
       <button
         type="submit"
         disabled={submitting || !content.trim()}
-        className="shrink-0 rounded bg-[#3b4890] px-4 text-sm font-medium text-white transition-colors hover:bg-[#2f3c78] disabled:cursor-not-allowed disabled:opacity-50"
+        className="shrink-0 rounded bg-[#8b0000] px-4 text-sm font-medium text-white transition-colors hover:bg-[#6b0000] disabled:cursor-not-allowed disabled:opacity-50"
       >
         {submitting ? "등록중..." : "등록"}
       </button>

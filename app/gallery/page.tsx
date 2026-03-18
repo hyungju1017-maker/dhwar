@@ -32,14 +32,14 @@ export default async function GalleryListPage({
   );
 
   const typeLabels: Record<GalleryType, string> = {
-    MAJOR: "주요 갤러리",
-    MINOR: "마이너 갤러리",
-    MINI: "미니 갤러리",
+    MAJOR: "주요 게시판",
+    MINOR: "마이너 게시판",
+    MINI: "미니 게시판",
   };
 
   return (
     <div>
-      <h1 className="text-[16px] font-bold mb-3">갤러리 목록</h1>
+      <h1 className="text-[16px] font-bold mb-3">게시판 목록</h1>
 
       {/* Tabs */}
       <div className="dc-tabs">
@@ -88,7 +88,7 @@ export default async function GalleryListPage({
           ))
         ) : (
           <div className="p-8 text-center text-sm text-[#999]">
-            등록된 갤러리가 없습니다.
+            등록된 게시판가 없습니다.
           </div>
         )}
       </div>
